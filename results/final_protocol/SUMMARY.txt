@@ -1,0 +1,33 @@
+
+TEST top-1 accuracy (%)  -- mean +/- std over seeds (n)
+Method        PlantVillageTomato               DeepWeeds                   IP102
+M1               99.11 +/- 0.05 (3)         92.95 +/- 0.16 (3)         71.38 +/- 0.11 (3)
+M2               99.18 +/- 0.13 (3)         93.19 +/- 0.17 (3)         70.76 +/- 0.49 (3)
+M3               99.13 +/- 0.13 (3)         93.31 +/- 0.26 (3)         70.93 +/- 0.35 (3)
+M4               86.88 +/- 0.06 (3)         71.08 +/- 0.13 (3)         59.64 +/- 0.05 (3)
+
+TEST macro-F1 (%)  -- mean +/- std over seeds (n)
+Method        PlantVillageTomato               DeepWeeds                   IP102
+M1               98.90 +/- 0.03 (3)         90.56 +/- 0.19 (3)         49.35 +/- 1.04 (3)
+M2               98.95 +/- 0.19 (3)         90.81 +/- 0.33 (3)         48.46 +/- 0.08 (3)
+M3               98.90 +/- 0.12 (3)         91.03 +/- 0.53 (3)         48.05 +/- 0.86 (3)
+M4               81.88 +/- 0.10 (3)         58.10 +/- 0.21 (3)         32.72 +/- 0.13 (3)
+
+Paired differences M1 - baseline on TEST accuracy (pp), per seed [mean, wins/seeds]
+  M1-M2 PlantVillageTomato  : -0.19  -0.02  +0.00   mean -0.07  wins 0/3
+  M1-M2 DeepWeeds           : -0.46  +0.12  -0.38   mean -0.24  wins 1/3
+  M1-M2 IP102               : +0.45  +1.06  +0.37   mean +0.63  wins 3/3
+  M1-M3 PlantVillageTomato  : -0.16  +0.09  +0.02   mean -0.02  wins 2/3
+  M1-M3 DeepWeeds           : -0.23  -0.25  -0.60   mean -0.36  wins 0/3
+  M1-M3 IP102               : +0.68  +0.53  +0.15   mean +0.45  wins 3/3
+
+Selected epochs / val acc (M1):
+  PlantVillageTomato   seed 42: best epoch 12, val 99.50, test 99.12, lambda 0.05
+  PlantVillageTomato   seed 123: best epoch 14, val 99.45, test 99.15, lambda 0.05
+  PlantVillageTomato   seed 456: best epoch 14, val 99.59, test 99.06, lambda 0.05
+  DeepWeeds            seed 42: best epoch 11, val 93.21, test 92.80, lambda 0.1
+  DeepWeeds            seed 123: best epoch 14, val 93.85, test 93.12, lambda 0.1
+  DeepWeeds            seed 456: best epoch 14, val 94.16, test 92.94, lambda 0.1
+  IP102                seed 42: best epoch 11, val 70.98, test 71.41, lambda 0.125
+  IP102                seed 123: best epoch 12, val 71.28, test 71.26, lambda 0.125
+  IP102                seed 456: best epoch 10, val 71.13, test 71.48, lambda 0.125
